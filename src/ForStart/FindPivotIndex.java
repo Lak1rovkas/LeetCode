@@ -1,28 +1,23 @@
 package ForStart;
 
+
 public class FindPivotIndex {
-    public int pivotIndex(int[] numbers){
-
-        int resultLeftSide = 0;
-        int resultRightSide = 0;
-
-        for(int i = 0; i < numbers.length;i++){
-            if(i != 0) {
-                for (int indexLeftSide = 0; indexLeftSide < i; indexLeftSide++) {
-                    resultLeftSide += numbers[indexLeftSide];
-                }
+    public int pivotIndex(int [] nums) {
+        int resultBeforePivotIndex = 0;
+        int resultAfterPivotIndex = 0;
+        for(int i = 0; i < nums.length; i++){
+            for(int j = 0; j < i; j++){
+                resultBeforePivotIndex += nums[j];
             }
-            if(i != numbers.length - 1) {
-                for (int indexRightSide = i + 1; indexRightSide < numbers.length; indexRightSide++) {
-                    resultRightSide += numbers[indexRightSide];
-                }
+            for(int k = nums.length - 1; k > i; k--){
+                resultAfterPivotIndex += nums[k];
             }
-            if(resultLeftSide == resultRightSide){
+            if(resultBeforePivotIndex == resultAfterPivotIndex){
                 return i;
             }
-            else{
-                resultLeftSide = 0;
-                resultRightSide = 0;
+            else {
+                resultBeforePivotIndex = 0;
+                resultAfterPivotIndex = 0;
             }
         }
         return -1;

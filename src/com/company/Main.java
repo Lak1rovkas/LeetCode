@@ -1,15 +1,15 @@
 package com.company;
 
-import ForStart.*;
 
-import java.util.Arrays;
+import ForStart.BestTimeToBuyAndSellStock;
+import ForStart.PascalTriangleII;
 
 public class Main {
 
     public static void main(String[] args) {
-        int a = 4;
-        int b = 50;
-        System.out.println(a / (b * 0.01));
+        //System.out.println(BestTimeToBuyAndSellStock.maxProfit(new int[]{7,1,5,3,6,4}));
+        //System.out.println(BestTimeToBuyAndSellStock.maxProfit(new int[]{7,6,5,3,2,1}));
+        System.out.println(BestTimeToBuyAndSellStock.maxProfit(new int[]{1,6,5,3,6,18}));
 
     }
 }
